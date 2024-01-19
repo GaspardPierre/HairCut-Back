@@ -1,5 +1,19 @@
 const Appointment = require('../models/Appointment');
 
+//GET ALL APPOINTMENTS
+
+exports.getAllAppointments = async (req, res) => {
+  try {
+    // Récupérer tous les rendez-vous de la base de données
+    const appointments = await Appointment.find({});
+   
+    res.status(200).json(appointments);
+  } catch (error) {
+  
+    res.status(500).json({ message: "Erreur lors de la récupération des rendez-vous", error: error });
+  }
+};
+
 // CREATE RDV
 
 exports.createAppointment = async (req, res) => {

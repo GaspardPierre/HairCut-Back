@@ -15,7 +15,7 @@ mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Connexion à MongoDB réussie'))
   .catch(err => console.error('Erreur de connexion à MongoDB', err));
 
-app.use('/appointments', appointmentsRouter); // Utilisation des routes des rendez-vous
+app.use('/api/appointments', appointmentsRouter); // Utilisation des routes des rendez-vous
 
 app.listen(port, () => {
   console.log(`Serveur démarré sur http://localhost:${port}`);
